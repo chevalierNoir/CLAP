@@ -111,6 +111,11 @@ class CLAP_Module(torch.nn.Module):
                 print('Download completed!')
         print('Load Checkpoint...')
         ckpt = load_state_dict(ckpt, skip_params=True)
+        offending_keys = ["text_branch.embeddings.position_ids"]
+        for key in offending_keys:
+            if key in ckpt:
+                print(f"Removing outdated {key=} from checkpoint")
+                del ckpt[key]
         self.model.load_state_dict(ckpt)
         if verbose:
             param_names = [n for n, p in self.model.named_parameters()]
