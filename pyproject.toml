@@ -21,24 +21,16 @@ license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
-  "numpy==1.23.5",
   "soundfile",
   "librosa",
   "torchlibrosa",
-  "ftfy",
-  "braceexpand",
-  "webdataset",
   "wget",
-  "wandb",
-  "llvmlite",
   "scipy",
+  "h5py",
   "scikit-learn",
   "pandas",
-  "h5py",
-  "tqdm",
-  "regex",
   "transformers",
-  "progressbar"
+  "webdataset",
 ]
 classifiers = [
     'Development Status :: 3 - Alpha',
